@@ -10,21 +10,21 @@ jobs:
     container: cuaesd/aesd-autotest:24-unit-test
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
       - name: Checkout submodules
-        run: git submodule update --init --recursive
-      - name: Update submodules
-        run: git submodule foreach git pull origin master
+        run: git submodule update --init --recursive --remote
       - name: Run unit test
         run: ./unit-test.sh
   full-test:
     container: cuaesd/aesd-autotest:24-assignment1
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
       - name: Checkout submodules
-        run: git submodule update --init --recursive
-      - name: Update submodules
-        run: git submodule foreach git pull origin master
+        run: git submodule update --init --recursive --remote
       - name: Run full test
         run: ./full-test.sh
