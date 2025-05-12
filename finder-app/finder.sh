@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 if [[ -z "$1" || -z "$2" ]]; then
   echo "Both arguments not supplied"
