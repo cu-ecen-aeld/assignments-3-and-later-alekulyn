@@ -1,4 +1,3 @@
-CROSS_COMPILE=
 
 all:
 	$(CROSS_COMPILE)gcc -o ./writer ./writer.c
